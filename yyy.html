@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>北京时间实时显示</title>
+    <meta charset="UTF-8">
+    <script>
+        function updateTime() {
+            const options = { 
+                timeZone: 'Asia/Shanghai', 
+                hour12: false,
+                year: 'numeric', 
+                month: '2-digit', 
+                day: '2-digit',
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit'
+            };
+            const timeStr = new Date().toLocaleString('zh-CN', options);
+            document.getElementById('time').innerText = timeStr;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</head>
+<body>
+    <h1>北京时间：<span id="time"></span></h1>
+</body>
+</html>
